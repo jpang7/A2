@@ -1,4 +1,5 @@
 from board import *
+from housing import *
 from marshmallow_sqlalchemy import field_for
 
 # Using marshmallow-sqlalchemy will make your life a lot easier
@@ -6,3 +7,7 @@ from marshmallow_sqlalchemy import field_for
 class BoardSchema(ModelSchema):
   class Meta(ModelSchema.Meta):
     model = Board
+
+class HouseSchema(ModelSchema):
+  class Meta(ModelSchema.Meta):
+    model = Housing

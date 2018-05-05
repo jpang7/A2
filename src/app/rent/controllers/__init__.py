@@ -3,13 +3,14 @@ from functools import wraps # for decorators
 import app
 
 # Models
-from app.kanban.models.all import *
+from app.rent.models.all import *
+#from app.rent.models.all import Housing
 
 # DAO
-from app.kanban.dao import boards_dao
+from app.rent.dao import boards_dao
 
 # Serializers
 board_schema         = BoardSchema()
 
 # Blueprint
-from app.kanban import kanban
+from app.rent import rent

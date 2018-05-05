@@ -13,8 +13,8 @@ db = SQLAlchemy(app)
 
 # Import + Register Blueprints
 # Workflow is as follows:
-from app.kanban import kanban as kanban
-app.register_blueprint(kanban)
+from app.rent import rent as rent
+app.register_blueprint(rent)
 
 # Default functionality of rendering index.html
 def render_page():
@@ -23,7 +23,8 @@ def render_page():
 # React Catch All Paths
 @app.route('/', methods=['GET'])
 def index():
-  return render_page()
+  return jsonify("hello world!")
+  #return render_page()
 @app.route('/<path:path>', methods=['GET'])
 def any_root_path(path):
   return render_page()
