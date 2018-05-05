@@ -23,8 +23,8 @@ def render_page():
 # React Catch All Paths
 @app.route('/', methods=['GET'])
 def index():
-  return jsonify("hello world!")
-  #return render_page()
+  #return jsonify("hello world!")
+  return render_page()
 @app.route('/<path:path>', methods=['GET'])
 def any_root_path(path):
   return render_page()

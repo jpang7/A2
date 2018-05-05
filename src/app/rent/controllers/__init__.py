@@ -11,6 +11,7 @@ from app.rent.dao import boards_dao
 
 # Serializers
 board_schema         = BoardSchema()
+housing_schema = HouseSchema()
 
 # Blueprint
 from app.rent import rent
