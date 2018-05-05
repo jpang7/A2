@@ -39,10 +39,12 @@ def create_house(name,price,location,address,ownerName,latitude,longitude):
 
 @rent.route('/delete/<name>', methods = ['GET', 'POST', 'DELETE'])
 def delete_house(name):
-    dhouse = Housing.query.filter_by(propertyName = name).first()
-    db.session.delete(dhouse)
-    db.session.commit()
-    return jsonify(d)
+    try:
+        dhouse = Housing.query.filter_by(propertyName = name).first()
+        db.session.delete(dhouse)
+        db.session.commit()
+        return jsonify(d)
+    except Exception as e: return jsonify("Your target is not in the database")
 
 @rent.route('/deleteall', methods = ['GET', 'POST', 'DELETE'])
 def delete_all():
