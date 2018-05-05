@@ -29,10 +29,13 @@ def test_name(name):
 
 @rent.route('/createhouse/<name>/<price>/<location>/<address>/<ownerName>/<latitude>/<longitude>', methods = ['GET', 'POST', 'DELETE'])
 def create_house(name,price,location,address,ownerName,latitude,longitude):
-    house = Housing(name, price, location, address, ownerName, latitude, longitude)
-    db.session.add(house)
-    db.session.commit()
-    return jsonify(d)
+    try:
+        house = Housing(name, price, location, address, ownerName, latitude, longitude)
+        db.session.add(house)
+        db.session.commit()
+        return jsonify(d)
+    except Exception as e: return jsonify(e)
+   
 
 @rent.route('/delete/<name>', methods = ['GET', 'POST', 'DELETE'])
 def delete_house(name):
