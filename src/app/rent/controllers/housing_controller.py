@@ -1,12 +1,11 @@
 from . import *
 d = {'success':'true'}
 
-
 @rent.route('/', methods = ['GET'])
 def testing():
     return jsonify("Hello World")
 
-@rent.route('/allhouses', methods = ['GET'])
+@rent.route('/allhouses', methods = ['GET', 'POST', 'DELETE'])
 def get_all():
     li = []
     houses = Housing.query.all()
@@ -24,19 +23,29 @@ def get_all():
     #t = db.get_all()
     #return jsonify(t)
 
-@rent.route('/createhouse', methods = ['POST'])
-def create_house():
-    housing = Housing()
-    #name = request.args['name']
-    #location = request.args['location']
-    #reviews = request.args['reviews']
-    #housing = Housing(name,reviews, location)
-    #db.create_house(housing)
-    #return jsonify(task.to_dict())
+@rent.route('/test/<name>')
+def test_name(name):
+    return jsonify('this is the name' + name)
 
-#@app.route('/deletehouse', methods = ['DELETE'])
-#def delete_house():
+@rent.route('/createhouse/<name>/<price>/<location>/<address>/<ownerName>/<latitude>/<longitude>', methods = ['GET', 'POST', 'DELETE'])
+def create_house(name,price,location,address,ownerName,latitude,longitude):
+    house = Housing(name, price, location, address, ownerName, latitude, longitude)
+    db.session.add(house)
+    db.session.commit()
+    return jsonify(d)
+
+@rent.route('/delete/<name>', methods = ['GET', 'POST', 'DELETE'])
+def delete_house(name):
+    dhouse = Housing.query.filter_by(propertyName = name).first()
+    db.session.delete(dhouse)
+    db.session.commit()
+    return jsonify(d)
+
+@rent.route('/deleteall', methods = ['GET', 'POST', 'DELETE'])
+def delete_all():
+    houses = Housing.query.all()
+    for h in houses:
+        db.session.delete(h)
+    db.session.commit()
+    return jsonify(d)
     
-    #house_id = request.args.get('id')
-    #t = db.delete_house(house_id)
-    #return jsonify(d)
