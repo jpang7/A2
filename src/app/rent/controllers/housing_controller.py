@@ -34,7 +34,7 @@ def create_house(name,price,location,address,ownerName,latitude,longitude):
         db.session.add(house)
         db.session.commit()
         return jsonify(d)
-    except Exception as e: print e
+    except Exception as e: return jsonify("This house name exists already")
    
 
 @rent.route('/delete/<name>', methods = ['GET', 'POST', 'DELETE'])
