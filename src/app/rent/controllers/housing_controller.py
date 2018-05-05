@@ -34,7 +34,7 @@ def create_house(name,price,location,address,ownerName,latitude,longitude):
         db.session.add(house)
         db.session.commit()
         return jsonify(d)
-    except Exception as e: return jsonify(e)
+    except Exception as e: print e
    
 
 @rent.route('/delete/<name>', methods = ['GET', 'POST', 'DELETE'])
