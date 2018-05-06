@@ -1,8 +1,8 @@
 # CURent-- list and view properties near Cornell
 
-Used Cornell's PoBE A2 Flask boilerplate.
-Deployed through Docker + Google Cloud
-Databasing with PostgreSQL + SQLAlchemy 
+Used Cornell's PoBE A2 Flask boilerplate.  
+Deployed through Docker + Google Cloud  
+Databasing with PostgreSQL + SQLAlchemy  
 Many thanks to the AppDev team, especially Backend instructors.
 
 http://35.231.160.51/rent/ returns "Hello World"  
