@@ -4,7 +4,9 @@ Used Cornell's PoBE A2 Flask boilerplate.
 Deployed through Docker + Google Cloud. Will not stay up for long-- limited Cloud credits.  
 Databasing with PostgreSQL + SQLAlchemy  
 Functionalities: get all listings, post a uniquely named listing, delete a specific listing, delete all  
-Many thanks to the AppDev team, especially Backend instructors.
+Many thanks to the AppDev team, especially Backend instructors.  
+![alt text](/curenticonsmall.png)
+
 
 ## Endpoints  
 http://35.231.160.51/rent/ returns "Hello World"  
