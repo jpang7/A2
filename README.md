@@ -1,4 +1,4 @@
-# CURent-- list and view properties near Cornell
+# CURent-- list and view properties near Cornell (Backend)
 
 Used Cornell's PoBE A2 Flask boilerplate.  
 Deployed through Docker + Google Cloud. Will not stay up for long-- limited Cloud credits.  
