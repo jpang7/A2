@@ -1,7 +1,7 @@
 # CURent-- list and view properties near Cornell
 
 Used Cornell's PoBE A2 Flask boilerplate.  
-Deployed through Docker + Google Cloud  
+Deployed through Docker + Google Cloud. Will not stay up for long-- limited Cloud credits.
 Databasing with PostgreSQL + SQLAlchemy  
 Many thanks to the AppDev team, especially Backend instructors.
 
