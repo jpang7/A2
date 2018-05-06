@@ -5,7 +5,7 @@ Deployed through Docker + Google Cloud
 Databasing with PostgreSQL + SQLAlchemy  
 Many thanks to the AppDev team, especially Backend instructors.
 
-##Endpoints  
+## Endpoints  
 http://35.231.160.51/rent/ returns "Hello World"  
 http://35.231.160.51/rent/allhouses returns a list of dictionaries representing each property. View all the listings here.  
 http://35.231.160.51/rent/createhouse/name/price/location/address/ownerName/latitude/longitude
